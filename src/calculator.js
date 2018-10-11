@@ -2,9 +2,9 @@ function add(number){
   if(number == "")  
     return 0;
 	
-	if(number.includes(","))
+	if(number.split(/[\n,]/))
 	{
-		var numberArray = number.split(",");
+		var numberArray = number.split(/[\n,]/);
 		return sum(numberArray);
 	}
 	else
