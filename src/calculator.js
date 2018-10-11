@@ -1,6 +1,14 @@
 function add(number){
   if(number == "")  
     return 0;
+
+	if(parseInt(number) < 0)
+	{
+		var Error = "Negatives not allowed: -1";
+		throw Error;
+		return parseInt(number);  			
+	}
+
 	
 	if(number.split(/[\n,]/))
 	{
