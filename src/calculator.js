@@ -15,12 +15,7 @@ function add(number){
 	if(negArray.length > 0){	
 			throw new Error(`Negatives not allowed: ${negArray.join(',')}`);  			
 	}
-	
-	if(numberArray){
-		return sum(numberArray);
-	}
-	else
-		return parseInt(number);
+  return sum(numberArray);
 }
 
 function sum(numberArray){
