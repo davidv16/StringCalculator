@@ -1,16 +1,19 @@
-function add(number){
+function add(numbers){
   // is the string empty
-	if(number == "")  
+	if(numbers == "")  
     return 0;
 
-	let	numberArray = number.split(/[\n,]/);
+	let	numberArray = numbers.split(/[\n,]/);
 	let negArray = [];
 	for(let i = 0; i < numberArray.length; i++){
-		let n = parseInt(numberArray[i]);
-		if(n < 0){
-			negArray.push(n);
+		let number = parseInt(numberArray[i]);
+		if(number < 0){
+			negArray.push(number);
 		}
-		numberArray[i] = n;
+		if(number > 1000){
+			number = 0;
+		}
+		numberArray[i] = number;
 	}
 	if(negArray.length > 0){	
 			throw new Error(`Negatives not allowed: ${negArray.join(',')}`);  			
