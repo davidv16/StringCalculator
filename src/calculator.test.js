@@ -22,5 +22,15 @@ it("should sumerize multiple numbers with next line as separator", () => {
 	});
 
 it("should throw an exception if number is a negative", () => {
-	expect(() => { throw Error('Negatives not allowed: -1') }).toThrowError(Error);
+	const test = () => {
+	add("-1,2")
+	}
+	expect(test).toThrowError('Negatives not allowed: -1');
 });
+/*
+it("should throw an exception if number is a negative", () => {
+  const test = () => {
+	add("2,-4,3,-5")
+	}
+	expect(test).toThrowError('Negatives not allowed: -4,-5');
+});*/

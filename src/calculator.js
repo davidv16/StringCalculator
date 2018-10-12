@@ -4,8 +4,7 @@ function add(number){
 
 	if(parseInt(number) < 0)
 	{
-		var Error = "Negatives not allowed: -1";
-		throw Error;
+		throw new Error(`Negatives not allowed: ${number}`);
 		return parseInt(number);  			
 	}
 
