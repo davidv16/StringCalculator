@@ -1,17 +1,22 @@
 function add(number){
-  if(number == "")  
+  // is the string empty
+	if(number == "")  
     return 0;
 
-	if(parseInt(number) < 0)
-	{
-		throw new Error(`Negatives not allowed: ${number}`);
-		return parseInt(number);  			
+	let	numberArray = number.split(/[\n,]/);
+	let negArray = [];
+	for(let i = 0; i < numberArray.length; i++){
+		let n = parseInt(numberArray[i]);
+		if(n < 0){
+			negArray.push(n);
+		}
+		numberArray[i] = n;
 	}
-
+	if(negArray.length > 0){	
+			throw new Error(`Negatives not allowed: ${negArray.join(',')}`);  			
+	}
 	
-	if(number.split(/[\n,]/))
-	{
-		var numberArray = number.split(/[\n,]/);
+	if(numberArray){
 		return sum(numberArray);
 	}
 	else
