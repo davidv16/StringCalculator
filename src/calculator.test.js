@@ -39,3 +39,9 @@ it("should return 2 if number goes above a 1000", () => {
 	expect(add("1001,2")).toBe(2);
 });
 
+it("should return 3 if delimiter is a semi colon", () => {
+  expect(add("//;\n1;2")).toBe(3);
+});
+
+
+

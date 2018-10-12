@@ -2,8 +2,12 @@ function add(numbers){
   // is the string empty
 	if(numbers == "")  
     return 0;
-
-	let	numberArray = numbers.split(/[\n,]/);
+	let regex = /[\n,]/;
+	if(numbers.substr(0,2) == "//"){
+		regex = numbers.substr(2, numbers.indexOf("\n")-2);
+		numbers = numbers.split('\n')[1];
+	}
+	let	numberArray = numbers.split(regex);
 	let negArray = [];
 	for(let i = 0; i < numberArray.length; i++){
 		let number = parseInt(numberArray[i]);
@@ -18,7 +22,8 @@ function add(numbers){
 	if(negArray.length > 0){	
 			throw new Error(`Negatives not allowed: ${negArray.join(',')}`);  			
 	}
-  return sum(numberArray);
+  console.log(numberArray,regex);
+	return sum(numberArray);
 }
 
 function sum(numberArray){
